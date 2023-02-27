@@ -1,0 +1,6 @@
+apiVersion: dtkapps.itgod.org/v1
+kind: T1
+metadata:
+  name: t1-sample
+spec:
+  # TODO(user): Add fields here

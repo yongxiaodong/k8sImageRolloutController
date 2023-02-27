@@ -1,0 +1,19 @@
+# permissions for end users to view t1s.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: t1-viewer-role
+rules:
+- apiGroups:
+  - dtkapps.itgod.org
+  resources:
+  - t1s
+  verbs:
+  - create
+  - update
+- apiGroups:
+  - dtkapps.itgod.org
+  resources:
+  - t1s/status
+  verbs:
+  - get

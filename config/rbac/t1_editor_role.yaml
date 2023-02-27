@@ -1,0 +1,24 @@
+# permissions for end users to edit t1s.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: t1-editor-role
+rules:
+- apiGroups:
+  - dtkapps.itgod.org
+  resources:
+  - t1s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dtkapps.itgod.org
+  resources:
+  - t1s/status
+  verbs:
+  - get
