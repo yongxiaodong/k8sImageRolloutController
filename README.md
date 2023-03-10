@@ -1,8 +1,17 @@
 # k8simagerolloutcontroller
-// TODO(user): Add simple overview of use/purpose
+前端操作回滚
+![img.png](img.png)
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+由于kubectl rollout deployment原生回滚功能体验较差，且提供给研发团队使用难度较大，所以衍生了这个镜像回滚控制器  
+
+此控制器：
+> 1、基于项目发布时间
+> 2、根据发布时间自动匹配镜像ID
+
+未来功能：
+> Namespace镜像快照
+> 针对多个项目发版情况一键回滚至指定时间
 
 ## Getting Started
 You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
