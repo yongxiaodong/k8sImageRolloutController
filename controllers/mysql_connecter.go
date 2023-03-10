@@ -24,8 +24,7 @@ var err error
 
 func init() {
 	log2 = log.FromContext(context.Background())
-	//dsn := "root:Ww1317665590!@tcp(192.168.14.101:3306)/k8s-ImageInfo?charset=utf8mb4&parseTime=True&loc=Local"
-	dsn := "dataoke2:0Ab9v4Ou0PsMk2soMfVk@tcp(office.dataoke.com:3306)/k8s-snapshot?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "Username:Password@tcp(office.test.com:3306)/k8s-snapshot?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log2.Error(err, "connect Mysql error")

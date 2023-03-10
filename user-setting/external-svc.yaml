@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     service.beta.kubernetes.io/alibaba-cloud-loadbalancer-force-override-listeners: "true"
-    service.beta.kubernetes.io/alibaba-cloud-loadbalancer-id: lb-2ze1hp939vgsyeldpcomc
+    service.beta.kubernetes.io/alibaba-cloud-loadbalancer-id: lb-2ze1hp93syeldpcomc
     service.beta.kubernetes.io/alibaba-cloud-loadbalancer-scheduler: "wrr"
   labels:
     control-plane: controller-manager

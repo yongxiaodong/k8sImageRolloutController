@@ -90,7 +90,7 @@
                         </el-select>
 
                         <el-select v-model="selectedOption2" v-if="options2.length" filterable placeholder="ÇëÑ¡Ôñ»Ø¹ö°æ±¾">
-                            <el-option v-for="option in options2" :key="option.Image" :label="'¾µÏñ:' + option.Image + '  ·¢²¼Ê±¼ä:' + option.CreatedAt" :value="option"></el-option>
+                            <el-option v-for="option in options2" :key="option.Image" :label="'·¢²¼Ê±¼ä:' + option.CreatedAt + '  ¾µÏñ:' + option.Image" :value="option"></el-option>
                         </el-select>
 
 
@@ -121,6 +121,7 @@
                       ·¢²¼Ê±¼ä£º{{ selectedOption2.CreatedAt }}
                       Ä¿±êCommit ID£º{{ selectedOption2.Image.split(':')[selectedOption2.Image.split(':').length - 1] }}
                       ¾µÏñÃû³Æ: {{selectedOption2.Image}}
+                      µ±Ç°ÏßÉÏ°æ±¾£º{{options2[0].CurrentImage}}
                     </pre>
                             </el-card>
                         </div>
@@ -149,7 +150,7 @@
             };
         },
         created() {
-            axios.get('https://sre.buydance.com/api/v1/getAllDp')
+            axios.get('https://rollback.buydance.com/api/v1/getAllDp')
                 .then(response => {
                     this.options1 = response.data.map(item => item.DpName);
                 })
@@ -160,7 +161,7 @@
         watch: {
             selectedOption1(newVal) {
                 this.newVal = newVal
-                axios.get(`https://sre.buydance.com/api/v1/getDpImage?name=${newVal}`)
+                axios.get(`https://rollback.buydance.com/api/v1/getDpImage?name=${newVal}`)
                     .then(response => {
                         this.options2 = response.data;
                     })
@@ -179,7 +180,7 @@
                     return;
                 }
 
-                axios.post('https://sre.buydance.com/api/v1/commit', {
+                axios.post('https://rollback.test.com/api/v1/commit', {
                     dpName,
                     selectedImage
                 })
@@ -203,7 +204,7 @@
                     });
             },
             ref() {
-                axios.get(`https://sre.buydance.com/api/v1/getDpImage?name=${this.newVal}`)
+                axios.get(`https://rollback.buydance.com/api/v1/getDpImage?name=${this.newVal}`)
                     .then(response => {
                         this.options2 = response.data;
                     })
@@ -225,3 +226,4 @@
 </script>
 </body>
 </html>
+
